@@ -1,19 +1,12 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
-    <header>
-      <a href="#" className="logo">
-        WAkalni
-      </a>
-      <div className="menu-bar">
-        <nav className="navbar">
-          <a href="#home">Home</a>
+      <div className="topnav">     
+          <a className="active"href="#home" onClick={()=>{props.change("home")}}>Home</a>
           <a href="#Speciality">Speciality</a>
-          <a href="#Review">Review</a>
+          <a href="#Review" onClick={()=>{props.change("review")}}>Review</a>
           <a href="#Order">Order</a>
-        </nav>
       </div>
-    </header>
   );
 }
