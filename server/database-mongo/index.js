@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const mongoUri = "mongodb://localhost/mvp";
+var mongoose = require("mongoose");
+var mongoUri = "mongodb://localhost/mvp";
 
 mongoose.connect(mongoUri, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
   console.log("db connected");
 });
-const db = mongoose.connection;
+var db = mongoose.connection;
 
 module.exports = db

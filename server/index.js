@@ -1,6 +1,7 @@
 const express = require("express");
 const itemRoutes = require('./routes/item.routes')
-const mongoose = require('mongoose');
+const reviewRoutes = require('./routes/review.routes')
+
 // TODO: Update this
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/public"));
 
 app.use("/", itemRoutes);
-
+app.use("/", reviewRoutes)
 app.listen(PORT, function () {
   console.log("listening on port 3000!");
 });

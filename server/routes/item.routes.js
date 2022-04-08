@@ -1,6 +1,3 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const db = require("../database-mongo/index");
 const Item = require("../database-mongo/models/Item.model.js");
 const router = require("express").Router();
 
