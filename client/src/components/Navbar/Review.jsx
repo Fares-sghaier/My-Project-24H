@@ -11,6 +11,7 @@ class Review extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.reviewget = this.reviewget.bind(this);
   }
 
   componentDidMount() {
@@ -19,8 +20,8 @@ class Review extends React.Component {
 
   reviewget() {
     axios.get("/review").then((data) => {
-      console.log({ data }, "data comes");
-      this.setState({ review: data });
+      console.log(data.data, "data comes");
+      this.setState({ review: data.data });
     });
   }
   handleChange(e) {
@@ -30,8 +31,7 @@ class Review extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit() {
     var name = this.state.name;
     var email = this.state.email;
     var feedback = this.state.feedback;
@@ -39,12 +39,14 @@ class Review extends React.Component {
       .post("/post/review", { name: name, email: email, feedback: feedback })
       .then((data) => {
         console.log(data, "postcorrect");
+        this.reviewget();
         this.setState({ review: data });
       });
   }
   render() {
     return (
       <div className="container">
+        {console.log(this.state.review, "review")}
         <section className="order" id="order">
           <div className="row">
             <div className="image">
@@ -65,8 +67,8 @@ class Review extends React.Component {
                 />
                 <input
                   name="email"
-                  type="email"
-                  placeholder="email"
+                  type="src"
+                  placeholder="YOU CAN UPLOAD YOUR PHOTO "
                   onChange={this.handleChange}
                   taken={this.state.email}
                 />
@@ -88,7 +90,32 @@ class Review extends React.Component {
               />
             </form>
           </div>
+          <div className="eleven">
+            <h1>WE have {this.state.review.length} Feedback</h1>
+          </div>
         </section>
+        <div>
+          {this.state.review.map((elem, index) => {
+            return (
+              <div>
+                <section className="review" id="review">
+                  <h1 className="heading">
+                    {" "}
+                    OUR COSTUMER <span>REVIEW</span>{" "}
+                  </h1>
+
+                  <div className="box-container" key={index}>
+                    <div className="box">
+                      <img src={elem.email} alt="" />
+                      <h3>{elem.name}</h3>
+                      <p>{elem.feedback}</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
