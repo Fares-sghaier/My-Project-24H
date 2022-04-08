@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
 import Navbar from "./components/Navbar/Navbar.jsx"
 import Home from "./components/Navbar/Home.jsx"
 import Review from "./components/Navbar/Review.jsx"
+import Foodlist from "./components/Navbar/Foodlist.jsx"
+import Admin from "./components/Navbar/Admin.jsx"
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -48,8 +49,8 @@ changeView(view){
         </div>
       {this.state.view==="home" && <Home/>}
       {this.state.view==="review" && <Review/>}
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
+      {this.state.view==="speciality" && <Foodlist/>}
+      {this.state.view==="Admin" && <Admin/>}
     </div>
     )
   }
