@@ -11,7 +11,7 @@ router.get("/review", (req, res) => {
     .catch((error) => {
       res.status(500).send(error);
     });
-});
+}); //tested
 router.post("/post/review",(req,res)=>{
     console.log(req.body,"comes")
     Review.insertMany({
@@ -25,5 +25,5 @@ router.post("/post/review",(req,res)=>{
     .catch(error => {
         res.status(500).send(error)
     })
-})
+}) //tested
 module.exports = router;
