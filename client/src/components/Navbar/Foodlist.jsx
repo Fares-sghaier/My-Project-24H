@@ -1,26 +1,39 @@
-import React from "react";
+ import React from "react";
+ import data from "../../listdata.js";
 
-var Foodlist = (props) => {
-  return (
-    <div className="foodlist">
-       <div className="eight"><h1>OUR FOOD Gallery</h1></div> 
-      <section className="popular" id="popular">
-        <h1 class="heading">
-          {" "}
-           <span></span> {" "}
-        </h1>
-        <div className="box-container">
-          <div className="box">
-            <span className="price"></span>
-            <img src="https://previews.123rf.com/images/maxpetrov/maxpetrov1810/maxpetrov181000020/109330391-sabrosa-hamburguesa-jugosa-en-una-placa-de-metal.jpg" alt="" />
-            <h3>{props.elem}</h3>
-            <button href="#" className="bota">
-              order now
-            </button>
+class Foodlist extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    data:data
+    }
+  }
+  render(){
+    return(
+      <div className="foodlist">
+        <div className="eight"><h1>OUR FOOD LIST</h1></div> 
+       <section className="popular" id="popular">
+         <h1 class="heading">
+           {" "}
+            <span></span> {" "}
+         </h1>
+         {this.state.data.map((elem,index)=>{
+           return (
+            <div className="box-container" key={index}>
+            <div className="box">
+              <span className="price">{elem.price}</span>
+              <img src={elem.image} alt="" />
+              <h3>{elem.name}</h3>
+              <button href="#" className="bota">
+                order now
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-  );
+           )
+         })}
+       </section>
+     </div>
+    )
+  }
 }
-export default Foodlist;
+ export default Foodlist;

@@ -1,0 +1,39 @@
+var data =[
+    {
+        name:"Lablebi",
+        price:"12$",
+        image:"https://carthagemagazine.com/wp-content/uploads/2021/02/Tunisian-Lablebi.jpeg",
+    },
+    {
+        name:"Pizza",
+        price:"15$",
+        image:"https://www.simplyrecipes.com/thmb/8caxM88NgxZjz-T2aeRW3xjhzBg=/2000x1125/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg",
+    },
+    {
+        name:"kosksi",
+        price:"20$",
+        image:"https://www.diari.tn/sites/default/files/image/recette/couscous-viande.jpg",
+    },
+    {
+        name:"Pasta",
+        price:"16$",
+        image:"https://assets.epicurious.com/photos/55f72d733c346243461d496e/5:4/w_3140,h_2512,c_limit/09112015_15minute_pastasauce_tomato.jpg",
+    },
+    {
+        name:"paella",
+        price:"40$",
+        image:"https://www.simplyrecipes.com/thmb/kuFvxBY8s3avWVIwFrO5G7aws6A=/2000x1334/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__07__Seafood-Paella-HORIZONTAL-ce4d8fe93ec045c0a868ec065f49800a.jpg"
+    },
+    {
+        name:"Makloub",
+        price:"10$",
+        image:"https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/b4/30/e0/le-makloub-notre-specialite.jpg"
+    }, 
+     {
+        name:"Takos",
+        price:"10$",
+        image:"http://www.groupe-fbh.com/assets/img/marques/marque2/b.jpg",
+    }
+]
+
+module.exports =data;

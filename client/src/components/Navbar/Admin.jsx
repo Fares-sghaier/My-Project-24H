@@ -5,7 +5,7 @@ export default function Admin(props) {
       <h2>Login</h2>
       <form>
         <div className="user-box">
-          <input type="text" name="" required="" />
+          <input type="email" name="" required />
           <label>Username</label>
         </div>
         <div className="user-box">
