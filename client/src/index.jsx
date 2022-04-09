@@ -6,6 +6,7 @@ import Home from "./components/Navbar/Home.jsx"
 import Review from "./components/Navbar/Review.jsx"
 import Foodlist from "./components/Navbar/Foodlist.jsx"
 import Admin from "./components/Navbar/Admin.jsx"
+import Adminwork from "./components/Navbar/Adminwork.jsx"
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +51,8 @@ changeView(view){
       {this.state.view==="home" && <Home/>}
       {this.state.view==="review" && <Review/>}
       {this.state.view==="speciality" && <Foodlist/>}
-      {this.state.view==="Admin" && <Admin/>}
+      {this.state.view==="Admin" && <Admin change={this.changeView}/>}
+      {this.state.view==="adminwork" && <Adminwork change={this.changeView}/>}
     </div>
     )
   }

@@ -107,7 +107,7 @@ class Review extends React.Component {
                   <div className="box-container" key={index}>
                     <div className="box">
                       <img src={elem.email} alt="" />
-                      <h3>{elem.name}</h3>
+                      <h3 > {elem.name}</h3>
                       <p>{elem.feedback}</p>
                     </div>
                   </div>

@@ -10,6 +10,19 @@ router.get("/get", (req, res) => {
     .catch((error) => {
       res.status(500).send(error);
     });
-});
+}); //tested
+router.post("/post/list",(req,res)=>{
+   Item.insertMany({
+     price:req.body.price,
+     image:req.body.image,
+     name:req.body.name,
+   })
+   .then((items)=>{
+     res.status(200).send(items)
+   })
+   .catch((error)=>{
+     res.status(500).send(error)
+   })
+}) //tested
 
 module.exports = router;
